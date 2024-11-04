@@ -1,12 +1,14 @@
 import React from "react";
 import Nav from "./Nav";
-
-import hogs from "../porkers_data";
+import Subnav from "./subnav";
+import Hogdisplay from "./Hog_display";
 
 function App() {
 	return (
-		<div className="App">
+		<div id="container">
+			<Subnav/>
 			<Nav />
+			<Hogdisplay/>
 		</div>
 	);
 }

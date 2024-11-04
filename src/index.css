@@ -1,152 +1,132 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+/* From Uiverse.io by escannord */ 
+#container {
+  width: 100%;
+  height: 100%;
+  --bg: linear-gradient(
+      45deg,
+      rgb(0, 0, 0) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgb(0, 0, 0) 75%,
+      rgb(0, 0, 0)
+    ),
+    linear-gradient(
+      45deg,
+      rgb(0, 0, 0) 25%,
+      white 25%,
+      white 75%,
+      rgb(0, 0, 0) 75%,
+      rgb(0, 0, 0)
+    );
+  --bgsize: 60px 60px;
+  --bgposition: 0 0, 30px 30px;
+  background-color: white;
+  background-image: var(--bg);
+  background-size: var(--bgsize);
+  background-position: var(--bgposition);
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 500px rgb(15, 15, 15);
 }
 
-.App {
-  margin: 0% 5% 0% 5%;
-  text-align: center;
-}
-
-.TwirlyPig {
-  transition: all 3s ease-in-out;
-  display: inline;
-}
-
-.TwirlyPig:hover {
-  transform: scale(1.5);
-}
-
-.navWrapper {
-  margin-bottom: 2%;
-}
-
-.filterWrapper {
-  margin: 2% 0% 2% 0%;
-}
-
-.headerText {
-  color: #F5A9BC;
-  font-size: 3em;
-  margin: 0% 2% 0% 2%;
-}
-
-.largeHeader {
-  font-size: 3.5em;
-  font-weight: bold;
-  color: #3B0B0B;
-}
-
-.smallHeader {
-  font-size: 1.75em;
-  font-weight: bold;
-  color: #3B0B0B;
-}
-
-.normalText {
-  font-family: Georgia, serif;
-  font-size: .75em;
-}
-
-.hoggyText {
-  font-size: 1.5em;
-}
-
-.achievementText {
-  color: purple;
-}
-
-ul {
-  list-style-type: none;
-  list-style: none;
-}
-
-.normalText ul {
-  font-family: Georgia, serif;
-  font-size: .75em;
-  text-align: left;
-}
-
-.subtleText {
-  color: #D1D1D1;
-  font-size: .75em;
-}
-
-
-.indexWrapper {
-  margin: auto;
-}
-
-
-.pigTile {
-  display: inline;
-  background-repeat: no-repeat;
-  background-position: center 90%;
-  float: left;
-  margin: 2%;
-  padding: 1%;
-  outline: #3B0B0B dotted thick;
-  transition: 0.75s;
-  opacity: 1;
-}
-
-.minBackgroundSneak {
+#container::before {
+  content: "";
+  width: 100%;
+  height: 150%;
+  box-shadow: 0px -100px 500px black, inset 0px 100px 500px rgb(15, 15, 15);
   position: absolute;
-  width: inherit;
-  height: inherit;
-  background-size: cover;
-  z-index: -3;
+  top: 55%;
+  background-image: var(--bg);
+  background-size: var(--bgsize);
+  background-position: var(--bgposition);
+  transform-origin: top;
+  transform: rotateX(80deg);
 }
 
-.maxBackgroundSneak {
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background-size: cover;
-  z-index: -3;
-  opacity: 0.75;
-}
+/* From Uiverse.io by Tiagoadag */ 
+#card {
+  height: 254px;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+ }
+ 
+ #card2 {
+  height: 254px;
+  background-color: #020202;
+  border-radius:10px;
+  transition: all .2s;
+ }
+ 
+ #card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+ }
+ 
+ .card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+ }
 
-.pigTile h3 {
-  color: #FBB;
-}
-
-.minPigTile {
-  width: 250px;
-  height: 250px;
-  background-size: cover;
-}
-
-.maxPigTile {
-  background-size: cover;
-  width: 500px;
-  height: 500px;
-}
-
-.pigTile:hover {
+ .card:hover {
+  border: 1px solid black;
   transform: scale(1.05);
 }
 
-
-.App-logo {
-  animation: App-logo-spin infinite 5s linear;
-  height: 80px;
-  transition: all .2s ease-in-out;
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
 }
 
-.footer {
-  padding: 1%;
-  clear: both;
+/* From Uiverse.io by eslam-hany */ 
+.card3 {
+  position: relative;
+  height: 320px;
+  background: rgb(148, 155, 155);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
+.card3::before,
+.card3::after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: rgb(76, 79, 80);
+  transition: all 0.5s;
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.card3::before {
+  top: 0;
+  right: 0;
+  border-radius: 0 15px 0 100%;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.card3::after {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100%  0 15px;
+}
+
+.card3:hover::before,
+.card3:hover:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.card3:hover:after {
+  content: "WELCOME";
 }
