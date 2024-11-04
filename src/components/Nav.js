@@ -3,6 +3,7 @@ import piggy from "../assets/porco.png";
 
 const Nav = () => {
 	return (
+		// Data containing the pig image at the top
 		<div className="card3" style={{textAlign:"center"}}>
 			<span className="headerText">HogWild</span>
 			<div className="TwirlyPig">

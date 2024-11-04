@@ -5,11 +5,13 @@ function Subnav()
 {
    const [greased]=useState(false)
     return(
+      // The top most nav display on the website containing drop down menus (The drop downs also have an issue)
         <div style={{backgroundColor:"gray"}}>
             <ul className="nav nav-tabs">
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
+                {/* aA drop down responsible for the filtering of data */}
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Filter</a>
                   <ul className="dropdown-menu">
@@ -19,6 +21,7 @@ function Subnav()
                     <li><a className="dropdown-item" href="#" >Non Greased</a></li>
                   </ul>
                 </li>
+                {/* A drop down responsible for the sorting of data */}
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Sort</a>
                   <ul className="dropdown-menu">

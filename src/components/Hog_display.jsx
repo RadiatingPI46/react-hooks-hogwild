@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import hogs from "../porkers_data";
 
-
+// Function responsible for displayig tghe pig data pn porkers_data
 function Hogdisplay() {
     const [hog, setHog] = useState({})
         return (
@@ -10,7 +10,7 @@ function Hogdisplay() {
             <div className="row">
             {
             hogs.map((Hog, index) => (
-        
+              // A map function for listing the objects in order
             <div key={index} className="col-md-4" onClick={()=>setHog(Hog)} data-bs-toggle="modal" data-bs-target="#hogModal" style={{justifyContent:"space-around"}}>
                 <div className="card" id="card" style={{textAlign:"center"}}>
                     <div id="card2">
@@ -23,7 +23,7 @@ function Hogdisplay() {
             }
         </div>
 
-     
+     {/* A modal that displays data when a particular pig is chosen (Has an issue) */}
         <div>
             <div class="modal fade" id="hogModal" tabindex="-1" aria-labelledby="hogModalLabel" aria-hidden="true">
               <div class="modal-dialog">
