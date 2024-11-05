@@ -4,6 +4,7 @@ import hogs from "../porkers_data";
 // Function responsible for displayig tghe pig data pn porkers_data
 function Hogdisplay() {
     const [hog, setHog] = useState({})
+    const [displayModal, setDisplayModal] = useState(false)
         return (
             <>
     <div className="ui grid container" >
@@ -11,7 +12,7 @@ function Hogdisplay() {
             {
             hogs.map((Hog, index) => (
               // A map function for listing the objects in order
-            <div key={index} className="col-md-4" onClick={()=>setHog(Hog)} data-bs-toggle="modal" data-bs-target="#exampleModal" style={{justifyContent:"space-around"}}>
+            <div key={index} className="col-md-4" onClick={()=>{setHog(Hog);setDisplayModal(!displayModal)}} data-bs-toggle="modal" data-bs-target="#exampleModal" style={{justifyContent:"space-around"}}>
                 <div className="card" id="card" style={{textAlign:"center"}}>
                     <div id="card2">
                     <h1 style={{color:"white"}}>{Hog.name}</h1>
@@ -24,7 +25,6 @@ function Hogdisplay() {
         </div>
 
      {/* A modal that displays data when a particular pig is chosen (Has an issue) */}
-        <div>
             <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div className="modal-dialog">
                 <div className="modal-content">
@@ -38,11 +38,9 @@ function Hogdisplay() {
                     {hog && hog.greased===true && <span>Greased</span>}
                     <p>Weight:{hog.weight}</p>
                   </div>
-                 
                 </div>
               </div>
             </div>
-        </div>
 
 
     </div>
