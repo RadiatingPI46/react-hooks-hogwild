@@ -3,7 +3,7 @@ import hogs from "../porkers_data";
 
 function Subnav()
 {
-   const [greased]=useState(false)
+   const [filter, setFilter]=useState({})
     return(
       // The top most nav display on the website containing drop down menus (The drop downs also have an issue)
         <div style={{backgroundColor:"gray"}}>
@@ -15,9 +15,10 @@ function Subnav()
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Filter</a>
                   <ul className="dropdown-menu">
-                    <li><button className="dropdown-item" onClick={hogs.filter((hog)=>{
-                      return greased ? hog.greased:true;
-                    })} >Greased</button></li>
+                    <li><button className="dropdown-item" onClick={()=>setFilter(hogs.filter((hog)=>{
+                      return filter.greased ? hog.greased:true;
+                      
+                    }))} >Greased</button></li>
                     <li><a className="dropdown-item" href="#" >Non Greased</a></li>
                   </ul>
                 </li>

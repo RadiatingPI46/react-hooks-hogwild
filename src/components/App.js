@@ -5,6 +5,7 @@ import Hogdisplay from "./Hog_display";
 
 function App() {
 	return (
+		// The container holidng the imported functions
 		<div id="container">
 			<Subnav/>
 			<Nav />
